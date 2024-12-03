@@ -3,7 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.nin0dev.vendroid">
 
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <application
         android:allowBackup="true"
@@ -12,41 +17,50 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true"
         tools:targetApi="34">
+
+        <!-- Recovery Activity -->
         <activity
             android:name=".RecoveryActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme" />
+
+        <!-- Settings Activity -->
         <activity
             android:name=".SettingsActivity"
             android:exported="false" />
+
+        <!-- Welcome Activity -->
         <activity
             android:name=".WelcomeActivity"
             android:exported="false"
             android:theme="@style/AppTheme" />
+
+        <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|layoutDirection"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme">
+            
+            <!-- Shortcuts -->
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
 
+            <!-- Main Intent Filter -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- Discord URL Handling -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:scheme="https" />
                 <data android:scheme="http" />
                 <data android:host="discord.com" />
@@ -58,5 +72,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
