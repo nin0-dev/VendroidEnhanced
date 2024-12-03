@@ -17,6 +17,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!-- Updates Section -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -40,6 +41,7 @@
                 android:enabled="false"
                 android:text="@string/autocheck_vencord" />
 
+            <!-- Splash Screen Section -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,7 +51,7 @@
 
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:id="@+id/viggy"
@@ -69,9 +71,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/oneko" />
-
             </RadioGroup>
 
+            <!-- Discord Branch Section -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,7 +83,7 @@
 
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:id="@+id/stable"
@@ -103,6 +105,7 @@
                     android:text="@string/canary" />
             </RadioGroup>
 
+            <!-- Desktop Mode Section -->
             <com.google.android.material.materialswitch.MaterialSwitch
                 android:id="@+id/desktop_mode"
                 android:layout_width="match_parent"
@@ -110,6 +113,7 @@
                 android:checked="true"
                 android:text="@string/desktop_mode" />
 
+            <!-- Equicord Section -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -123,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/equicord" />
 
+            <!-- Custom Location Section -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -137,9 +142,10 @@
                 android:text="@string/set_custom_location" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/custom_location_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fitsSystemWindows="true"
+                android:visibility="gone"
                 android:hint="@string/custom_location_url">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -148,19 +154,15 @@
                     android:layout_height="wrap_content"
                     android:visibility="gone"
                     tools:visibility="visible" />
-
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
 
-
-
-
+    <!-- App Bar -->
     <com.google.android.material.appbar.AppBarLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
@@ -169,9 +171,9 @@
             app:layout_collapseMode="pin"
             app:title="Vendroid Settings"
             app:titleTextColor="@color/text" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- Save Settings Button -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/save_settings"
         android:layout_width="wrap_content"
