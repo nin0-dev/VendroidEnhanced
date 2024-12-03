@@ -17,28 +17,38 @@ object HttpClient {
     var VencordRuntime: String? = null
     @JvmField
     var VencordMobileRuntime: String? = null
+
     @JvmStatic
     @Throws(IOException::class)
     fun fetchVencord(activity: Activity) {
         val sPrefs = activity.getSharedPreferences("settings", Context.MODE_PRIVATE)
         val e = sPrefs.edit()
         val bundleURLToUse = if(sPrefs.getBoolean("equicord", false)) Constants.EQUICORD_BUNDLE_URL else Constants.JS_BUNDLE_URL
-        var vendroidFile = File(activity.filesDir, "vencord.js")
+        val vendroidFile = File(activity.filesDir, "vencord.js")
         val res = activity.resources
         res.openRawResource(R.raw.vencord_mobile).use { `is` -> VencordMobileRuntime = readAsText(`is`) }
+
+        // If VencordRuntime is already initialized, no need to fetch again
         if (VencordRuntime != null) return
+
+        // Check for app version updates or force redownload for debugging
         if (sPrefs.getInt("lastMajorUpdateThatUserHasUpdatedVencord", 0) < BuildConfig.VERSION_CODE) {
-            if(BuildConfig.DEBUG) Toast.makeText(activity, "Just updated app version, redownloading Vencord", Toast.LENGTH_LONG).show()
+            if (BuildConfig.DEBUG) {
+                Toast.makeText(activity, "Just updated app version, redownloading Vencord", Toast.LENGTH_LONG).show()
+            }
             vendroidFile.delete()
         }
-        if ((sPrefs.getString("vencordLocation", Constants.JS_BUNDLE_URL) != Constants.JS_BUNDLE_URL && sPrefs.getString("vencordLocation", Constants.JS_BUNDLE_URL) != Constants.EQUICORD_BUNDLE_URL) || BuildConfig.DEBUG) { // user is debugging vencord or app, always redownload
+        if ((sPrefs.getString("vencordLocation", Constants.JS_BUNDLE_URL) != Constants.JS_BUNDLE_URL && 
+            sPrefs.getString("vencordLocation", Constants.JS_BUNDLE_URL) != Constants.EQUICORD_BUNDLE_URL) || BuildConfig.DEBUG) {
+            // Redownload Vencord if debugging
             Toast.makeText(activity, "Debugging app or Vencord, bundle will be redownloaded. Avoid using on limited networks", Toast.LENGTH_LONG).show()
             vendroidFile.delete()
         }
+
+        // If Vencord file exists, use it, else download and save
         if (vendroidFile.exists()) {
             VencordRuntime = vendroidFile.readText()
-        }
-        else {
+        } else {
             val conn = fetch(sPrefs.getString("vencordLocation", bundleURLToUse)!!)
             vendroidFile.writeText(readAsText(conn.inputStream))
             e.putInt("lastMajorUpdateThatUserHasUpdatedVencord", BuildConfig.VERSION_CODE)
@@ -59,8 +69,8 @@ object HttpClient {
     @Throws(IOException::class)
     fun readAsText(`is`: InputStream): String {
         ByteArrayOutputStream().use { baos ->
+            val buf = ByteArray(16384) // 16 KB buffer
             var n: Int
-            val buf = ByteArray(16384) // 16 KB
             while (`is`.read(buf).also { n = it } > -1) {
                 baos.write(buf, 0, n)
             }
