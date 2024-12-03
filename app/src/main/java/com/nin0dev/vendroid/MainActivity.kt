@@ -52,7 +52,7 @@ class MainActivity : Activity() {
                         val madb = MaterialAlertDialogBuilder(this)
                         madb.setTitle(getString(R.string.vendroid_update_available))
                         madb.setMessage("Changelog:\n" + updateData.changelog)
-                        madb.setPositiveButton(getString(R.string.update), DialogInterface.OnClickListener { dialogInterface, i ->
+                        madb.setPositiveButton(getString(R.string.update), DialogInterface.OnClickListener { dialogInterface, i -> 
                             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/VendroidEnhanced/Vendroid/releases/latest/download/app-release.apk"))
                             startActivity(browserIntent)
                         })
@@ -75,7 +75,7 @@ class MainActivity : Activity() {
         }
     }
 
-    @SuppressLint("SetJavaScriptEnabled") // mad? watch this swag
+    @SuppressLint("SetJavaScriptEnabled") 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         DynamicColors.applyToActivitiesIfAvailable(application)
@@ -85,7 +85,6 @@ class MainActivity : Activity() {
         window.navigationBarColor = Color.TRANSPARENT
         val sPrefs = getSharedPreferences("settings", Context.MODE_PRIVATE)
         val editor = sPrefs.edit()
-        // https://developer.chrome.com/docs/devtools/remote-debugging/webviews/
         WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG)
         setContentView(R.layout.activity_main)
         if (sPrefs.getString("splash", "viggy") == "viggy") findViewById<GifImageView>(R.id.viggy_gif).visibility = VISIBLE
@@ -151,12 +150,12 @@ class MainActivity : Activity() {
                     var uris: Array<Uri?>?
                     try {
                         val clipData = intent.clipData
-                        if (clipData != null) { // multiple items
+                        if (clipData != null) { 
                             uris = arrayOfNulls(clipData.itemCount)
                             for (i in 0 until clipData.itemCount) {
                                 uris[i] = clipData.getItemAt(i).uri
                             }
-                        } else { // single item
+                        } else { 
                             uris = arrayOf(intent.data)
                         }
                     } catch (ex: Exception) {
@@ -175,7 +174,7 @@ class MainActivity : Activity() {
 
     private fun explodeAndroid() {
         StrictMode.setThreadPolicy(
-            ThreadPolicy.Builder() // trolley
+            ThreadPolicy.Builder()
                 .permitNetwork()
                 .build()
         )
@@ -200,7 +199,7 @@ class MainActivity : Activity() {
 
     fun showDiscordToast(message: String, type: String) {
         wv?.post(Runnable {
-            wv?.evaluateJavascript("toasts=Vencord.Webpack.Common.Toasts; toasts.show({id: toasts.genId(), message: \"$message\", type: toasts.Type.$type, options: {position: toasts.Position.BOTTOM,}})", null) // NOBODY LIKES TOASTS AT THE TOP
+            wv?.evaluateJavascript("toasts=Vencord.Webpack.Common.Toasts; toasts.show({id: toasts.genId(), message: \"$message\", type: toasts.Type.$type, options: {position: toasts.Position.BOTTOM,}})", null) 
         })
     }
 
