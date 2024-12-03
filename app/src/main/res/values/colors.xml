@@ -1,7 +1,7 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="seed">#5865F2</color>
-    <color name="debug_background">#FFC800</color>
+
+    <!-- Light Theme Colors -->
     <color name="md_theme_light_primary">#3F4CDA</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#E0E0FF</color>
@@ -32,6 +32,8 @@
     <color name="md_theme_light_surfaceTint">#3F4CDA</color>
     <color name="md_theme_light_outlineVariant">#C7C5D0</color>
     <color name="md_theme_light_scrim">#000000</color>
+
+    <!-- Dark Theme Colors -->
     <color name="md_theme_dark_primary">#BEC2FF</color>
     <color name="md_theme_dark_onPrimary">#000DA4</color>
     <color name="md_theme_dark_primaryContainer">#222FC2</color>
@@ -62,5 +64,10 @@
     <color name="md_theme_dark_surfaceTint">#BEC2FF</color>
     <color name="md_theme_dark_outlineVariant">#46464F</color>
     <color name="md_theme_dark_scrim">#000000</color>
+
+    <!-- Custom Colors -->
+    <color name="seed">#5865F2</color>
+    <color name="debug_background">#FFC800</color>
     <color name="text">#000000</color>
+
 </resources>
