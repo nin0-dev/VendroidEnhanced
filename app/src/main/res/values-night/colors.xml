@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="text">#ffffff</color>
+
+    <!-- Basic colors -->
+    <color name="text">#ffffff</color> <!-- White Text -->
+    <color name="primary_text">#212121</color> <!-- Primary Text Color -->
+    <color name="secondary_text">#757575</color> <!-- Secondary Text Color -->
+    <color name="background">#121212</color> <!-- Dark Background -->
+    <color name="card_background">#1e1e1e</color> <!-- Background for Cards and Containers -->
+    
+    <!-- Brand Colors -->
+    <color name="primary_color">#6200ea</color> <!-- Primary Brand Color -->
+    <color name="primary_color_dark">#3700b3</color> <!-- Darker Variant of Primary Color -->
+    <color name="accent_color">#03dac5</color> <!-- Accent Color -->
+    
+    <!-- Status Colors -->
+    <color name="success">#4caf50</color> <!-- Success Status (Green) -->
+    <color name="warning">#ff9800</color> <!-- Warning Status (Orange) -->
+    <color name="error">#f44336</color> <!-- Error Status (Red) -->
+    <color name="info">#2196f3</color> <!-- Info Status (Blue) -->
+    
+    <!-- UI Elements -->
+    <color name="button_background">#6200ea</color> <!-- Button Background Color -->
+    <color name="button_text">#ffffff</color> <!-- Button Text Color -->
+    <color name="disabled_button">#bdbdbd</color> <!-- Disabled Button Color -->
+    
+    <!-- Divider Colors -->
+    <color name="divider">#303030</color> <!-- Divider Lines -->
+    <color name="shadow">#000000</color> <!-- Shadow Color for UI Elements -->
+
+    <!-- Light/Dark Mode colors -->
+    <color name="light_mode_background">#ffffff</color> <!-- Light Mode Background -->
+    <color name="light_mode_text">#000000</color> <!-- Light Mode Text -->
+    
 </resources>
