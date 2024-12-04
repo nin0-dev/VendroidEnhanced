@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@color/debug_background"/>
-    <foreground android:drawable="@drawable/ic_launcher_foreground"/>
-    <monochrome android:drawable="@drawable/ic_launcher_foreground"/>
+    <background android:drawable="@color/debug_background"/> <!-- Background color should be defined in colors.xml -->
+    <foreground android:drawable="@drawable/ic_launcher_foreground"/> <!-- Ensure the foreground image is available in res/drawable/ -->
+    <monochrome android:drawable="@drawable/ic_launcher_foreground"/> <!-- Monochrome is optional but can be kept for certain devices -->
 </adaptive-icon>
