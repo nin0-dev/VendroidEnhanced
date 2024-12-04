@@ -3,18 +3,18 @@
     <string name="app_name">Vendroid Plus</string>
 
     <!-- Splash Screen Text -->
-    <string name="splashscreen_text">Loading Vendroid Plus, please wait&#8230;</string>
+    <string name="splashscreen_text">Loading Vendroid Plus, please wait...</string>
 
     <!-- Auto-check for updates -->
-    <string name="autocheck_vencord">Automatically update Vencord (Coming soon, stay tuned&#33;)</string>
-    <string name="autocheck_vendroid">Automatically check for Vendroid Plus updates (Always stay up-to-date&#33;)</string>
+    <string name="autocheck_vencord">Automatically update Vencord (Coming soon, stay tuned!)</string>
+    <string name="autocheck_vendroid">Automatically check for Vendroid Plus updates (Always stay up-to-date!)</string>
 
     <!-- Update Notifications -->
     <string name="updates_title">Available Updates</string>
-    <string name="vendroid_update_available">A new update for Vendroid Plus is available! Tap to update&#33;</string>
+    <string name="vendroid_update_available">A new update for Vendroid Plus is available! Tap to update!</string>
 
     <!-- Debugging and Placeholder Text -->
-    <string name="hello_blank_fragment">Welcome to the blank fragment, feel free to explore&#33;</string>
+    <string name="hello_blank_fragment">Welcome to the blank fragment, feel free to explore!</string>
 
     <!-- Discord Branch Selection -->
     <string name="discord_branch">Choose Discord Branch</string>
@@ -24,7 +24,7 @@
 
     <!-- Vencord Location -->
     <string name="vencord_location">Vencord Plugin Location</string>
-    <string name="set_custom_location">Set a custom Vencord plugin location (Only do this if you know what you're doing&#33;)</string>
+    <string name="set_custom_location">Set a custom Vencord plugin location (Only do this if you know what you're doing!)</string>
     <string name="custom_location_url">Enter custom plugin URL</string>
 
     <!-- Yes/No Options -->
@@ -41,7 +41,7 @@
 
     <!-- Recovery and Safe Mode -->
     <string name="recovery_shortcut_name">Recovery Mode</string>
-    <string name="cleared_all">Cleared all cookies and session data successfully&#33;</string>
+    <string name="cleared_all">Cleared all cookies and session data successfully!</string>
     <string name="start_normally">Start Normally</string>
     <string name="start_normally_desc">Start the app normally without any changes.</string>
     <string name="safe_mode">Safe Mode</string>
@@ -51,7 +51,7 @@
     <string name="save_settings">Save Settings</string>
 
     <!-- Desktop Mode -->
-    <string name="desktop_mode">Desktop Mode (Expect some lag&#33;)</string>
+    <string name="desktop_mode">Desktop Mode (Expect some lag!)</string>
 
     <!-- Equicord -->
     <string name="equicord_small">Equicord</string>
