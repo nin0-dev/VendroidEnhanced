@@ -4,18 +4,15 @@ env:
   main_project_module: app
 
 on:
-
   push:
     branches:
       - '*'
       - '!main'
   pull_request:
-  merge_group:
   workflow_dispatch:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -28,17 +25,34 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
       - name: Build gradle project
         run: ./gradlew build
 
-      - name: Build APK
+      - name: Build APK (Debug)
         run: ./gradlew assembleDebug
 
-      - name: Upload APK
+      - name: Build APK (Release)
+        run: ./gradlew assembleRelease
+
+      - name: Upload Debug APK
         uses: actions/upload-artifact@v4
         with:
-          name: app
+          name: app-debug-${{ github.sha }}
           path: ${{ env.main_project_module }}/build/outputs/apk/debug/app-debug.apk
+
+      - name: Upload Release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-${{ github.sha }}
+          path: ${{ env.main_project_module }}/build/outputs/apk/release/app-release.apk
