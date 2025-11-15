@@ -32,6 +32,7 @@ import com.nin0dev.vendroid.webview.VChromeClient
 import com.nin0dev.vendroid.webview.VWebviewClient
 import com.nin0dev.vendroid.webview.VencordNative
 import pl.droidsonroids.gif.GifImageView
+import java.io.File
 import java.io.IOException
 
 
@@ -192,6 +193,15 @@ class MainActivity : Activity() {
         s.javaScriptEnabled = true
         s.domStorageEnabled = true
         s.allowFileAccess = true
+
+        if (sPrefs.getBoolean("clearBundle", false)) {
+            File(filesDir, "vencord.js").delete()
+            editor.putString("vencordLocation", null)
+            editor.putBoolean("clearBundle", false)
+            editor.apply()
+            Toast.makeText(this, "Custom Vencord bundle cleared", Toast.LENGTH_SHORT)
+                .show()
+        }
 
         if (!sPrefs.getBoolean("safeMode", false)) {
             wv?.addJavascriptInterface(VencordNative(this, wv!!), "VencordMobileNative")

@@ -40,6 +40,14 @@ class RecoveryActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
+        findViewById<MaterialCardView>(R.id.clear_bundle).setOnClickListener {
+            val sPrefs = getSharedPreferences("settings", Context.MODE_PRIVATE)
+            val e = sPrefs.edit()
+            e.putBoolean("clearBundle", true)
+            e.apply()
+            finish()
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)

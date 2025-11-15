@@ -40,4 +40,6 @@
     <string name="save_exit"><![CDATA[Save & exit]]></string>
     <string name="force_update">Force update Vencord</string>
     <string name="force_update_desc">Start VendroidEnhanced, but force a Vencord update. Useful if you are crashing or similar and cannot access the Updater tab.</string>
+    <string name="clear_bundle">Clear custom bundle</string>
+    <string name="clear_bundle_desc">Clears the custom bundle you have set (if any) and goes back to stock Vencord.</string>
 </resources>
