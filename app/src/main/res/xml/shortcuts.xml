@@ -1,0 +1,12 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+	<shortcut
+		android:shortcutId="options"
+		android:enabled="true"
+		android:shortcutShortLabel="@string/options_shortcut_label"
+		android:icon="@drawable/ic_options">
+		<intent
+			android:action="android.intent.action.VIEW"
+			android:targetPackage="paige.vendroidnext"
+			android:targetClass="paige.vendroidnext.OptionsActivity" />
+	</shortcut>
+</shortcuts>
