@@ -1,5 +1,6 @@
 package paige.vendroidnext.ui.components
 
+import android.util.Log
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -16,7 +17,7 @@ class WebviewClient(
 	}
 
 	override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
-		if (request.url.authority !== "discord.com" || request.url.toString() !== "about:blank") {
+		if (request.url.authority !== "discord.com") {
 			CustomTabsIntent.Builder()
 				.setShowTitle(true)
 				.setUrlBarHidingEnabled(true)
