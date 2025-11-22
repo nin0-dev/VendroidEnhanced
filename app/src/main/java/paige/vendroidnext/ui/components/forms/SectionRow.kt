@@ -1,8 +1,6 @@
 package paige.vendroidnext.ui.components.forms
 
-import android.content.Context
 import android.view.SoundEffectConstants
-import android.view.View
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,8 +18,9 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun SectionRow(
 	modifier: Modifier = Modifier,
-	onClick: ((context: Context, view: View) -> Unit)? = null,
-	content: @Composable () -> Unit
+	onClick: (() -> Unit)? = null,
+	horizontalArrangement: Arrangement.Horizontal = Arrangement.spacedBy(12.dp),
+	content: @Composable () -> Unit,
 ) {
 	val context = LocalContext.current
 	val view = LocalView.current
@@ -33,13 +32,15 @@ fun SectionRow(
 		modifier = modifier.fillMaxWidth(),
 		onClick = {
 			view.playSoundEffect(SoundEffectConstants.CLICK)
-			onClick?.invoke(context, view)
+			onClick?.invoke()
 		},
 	) {
 		Row(
 			verticalAlignment = Alignment.CenterVertically,
-			modifier = Modifier.padding(16.dp),
-			horizontalArrangement = Arrangement.spacedBy(12.dp)
+			modifier = Modifier
+				.fillMaxWidth()
+				.padding(16.dp),
+			horizontalArrangement = horizontalArrangement
 		) {
 			content()
 		}

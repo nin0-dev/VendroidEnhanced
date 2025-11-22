@@ -17,7 +17,6 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun SectionRowLabel(
-	modifier: Modifier = Modifier,
 	title: String,
 	subtitle: String? = null,
 	icon: ImageVector? = null,

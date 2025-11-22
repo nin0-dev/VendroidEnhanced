@@ -53,5 +53,7 @@ dependencies {
 	implementation(libs.androidx.browser)
 	implementation(libs.androidx.compose.material.icons.extended)
 	implementation(libs.androidx.compose.foundation.layout)
+	implementation(libs.androidx.navigation.compose)
+	implementation(libs.androidx.compose.animation)
 	debugImplementation(libs.androidx.compose.ui.tooling)
 }

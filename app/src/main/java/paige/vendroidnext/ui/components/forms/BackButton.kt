@@ -1,7 +1,6 @@
 package paige.vendroidnext.ui.components.forms
 
 import android.view.SoundEffectConstants
-import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -11,19 +10,27 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun BackButton() {
+fun BackButton(
+	onBackPressed: () -> Unit
+) {
 	val view = LocalView.current
-	val context = LocalContext.current
+	var clicked by remember { mutableStateOf(false) }
 	IconButton(
 		onClick = {
-			view.playSoundEffect(SoundEffectConstants.NAVIGATION_LEFT)
-			(context as? ComponentActivity)?.onBackPressedDispatcher?.onBackPressed()
+			view.playSoundEffect(SoundEffectConstants.CLICK)
+			if (!clicked) {
+				clicked = true
+				onBackPressed()
+			}
 		},
 		shape = CircleShape,
 		colors = IconButtonDefaults.iconButtonColors(

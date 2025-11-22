@@ -1,65 +1,71 @@
 package paige.vendroidnext.ui.screens
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Code
-import androidx.compose.material.icons.rounded.Info
-import androidx.compose.material.icons.rounded.Settings
-import androidx.compose.material.icons.rounded.Star
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import paige.vendroidnext.ui.components.forms.Form
-import paige.vendroidnext.ui.components.forms.FormScaffold
-import paige.vendroidnext.ui.components.forms.Section
-import paige.vendroidnext.ui.components.forms.SectionRow
-import paige.vendroidnext.ui.components.forms.SectionRowLabel
+import androidx.navigation.NavBackStackEntry
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import paige.vendroidnext.ui.theme.VendroidTheme
-import paige.vendroidnext.ui.utils.openUrl
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OptionsScreen() {
-	FormScaffold("Options") {
-		Form(it) {
-			Section("General") {
-				SectionRow {
-					SectionRowLabel(
-						title = "Mods",
-						subtitle = "Manage client mods",
-						icon = Icons.Rounded.Star,
-						tint = Color(0xFFF3BE95)
-					)
-				}
-				SectionRow {
-					SectionRowLabel(
-						title = "Vendroid Settings",
-						subtitle = "Change Vendroid features",
-						icon = Icons.Rounded.Settings,
-						tint = Color(0xFFF3ADDF)
-					)
-				}
+	val navController = rememberNavController()
+	val onBackPressed: () -> Unit = {
+		navController.popBackStack()
+	}
+	val enterTransition: @JvmSuppressWildcards
+	AnimatedContentTransitionScope<NavBackStackEntry>.() -> EnterTransition? = {
+		slideIntoContainer(
+			animationSpec = spring(
+				dampingRatio = Spring.DampingRatioNoBouncy,
+				stiffness = Spring.StiffnessMediumLow
+			),
+			towards = AnimatedContentTransitionScope.SlideDirection.Start
+		)
+	}
+	val exitTransition: @JvmSuppressWildcards
+	AnimatedContentTransitionScope<NavBackStackEntry>.() -> ExitTransition? = {
+		slideOutOfContainer(
+			animationSpec = spring(
+				dampingRatio = Spring.DampingRatioNoBouncy,
+				stiffness = Spring.StiffnessMediumLow
+			),
+			towards = AnimatedContentTransitionScope.SlideDirection.End
+		)
+	}
+
+
+	NavHost(
+		navController, startDestination = "home",
+		enterTransition = { EnterTransition.None },
+		exitTransition = { ExitTransition.None },
+	) {
+		composable("home") {
+			OptionsHomeScreen { route ->
+				navController.navigate(route)
 			}
-			Section("Info") {
-				SectionRow {
-					SectionRowLabel(
-						title = "About",
-						subtitle = "not so stable 1.0.0",
-						icon = Icons.Rounded.Info
-					)
-				}
-				SectionRow(
-					onClick = { context, _ ->
-						openUrl(context, "https://github.com/nin0-dev/VendroidEnhanced")
-					}
-				) {
-					SectionRowLabel(
-						title = "Source Code",
-						subtitle = "nin0-dev/VendroidEnhanced",
-						icon = Icons.Rounded.Code
-					)
-				}
-			}
+		}
+		composable(
+			"mods",
+			enterTransition = enterTransition,
+			exitTransition = exitTransition
+		) {
+			OptionsModsScreen(onBackPressed)
+		}
+		composable(
+			"vde_settings",
+			enterTransition = enterTransition,
+			exitTransition = exitTransition
+		) {
+			OptionsVDEScreen(onBackPressed)
 		}
 	}
 }

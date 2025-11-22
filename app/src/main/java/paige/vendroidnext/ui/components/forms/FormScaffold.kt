@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 @Composable
 fun FormScaffold(
 	title: String,
+	onBackPressed: () -> Unit,
 	content: @Composable (PaddingValues) -> Unit
 ) {
 	Scaffold(
@@ -23,7 +24,7 @@ fun FormScaffold(
 		topBar = {
 			TopAppBar(
 				title = { Text(title) },
-				navigationIcon = { BackButton() },
+				navigationIcon = { BackButton(onBackPressed) },
 				colors = TopAppBarDefaults.topAppBarColors(
 					containerColor = MaterialTheme.colorScheme.surfaceContainer,
 				)
