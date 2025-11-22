@@ -14,7 +14,7 @@
 		android:theme="@style/Theme.VendroidNext"
 		android:usesCleartextTraffic="true">
 		<activity
-			android:name=".ui.activities.VendroidActivity"
+			android:name=".vendroid.ui.activities.VendroidActivity"
 			android:configChanges="orientation|screenSize"
 			android:exported="true"
 			android:theme="@style/Theme.VendroidNext">
@@ -27,7 +27,7 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name=".ui.activities.OptionsActivity"
+			android:name=".vendroid.ui.activities.OptionsActivity"
 			android:exported="true"
 			android:theme="@style/Theme.VendroidNext" />
 	</application>

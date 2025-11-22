@@ -1,4 +1,4 @@
-package paige.vendroidnext.ui.theme
+package dev.nin0.vendroid.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

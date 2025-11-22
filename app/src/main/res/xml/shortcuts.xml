@@ -6,7 +6,7 @@
 		android:shortcutShortLabel="@string/options_shortcut_label">
 		<intent
 			android:action="android.intent.action.VIEW"
-			android:targetClass="paige.vendroidnext.ui.activities.OptionsActivity"
-			android:targetPackage="paige.vendroidnext" />
+			android:targetClass="dev.nin0.vendroid.ui.activities.OptionsActivity"
+			android:targetPackage="dev.nin0" />
 	</shortcut>
 </shortcuts>

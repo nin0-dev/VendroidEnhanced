@@ -1,10 +1,10 @@
-package paige.vendroidnext.ui.screens
+package dev.nin0.vendroid.ui.screens
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import paige.vendroidnext.ui.components.forms.Form
-import paige.vendroidnext.ui.components.forms.FormScaffold
-import paige.vendroidnext.ui.theme.VendroidTheme
+import dev.nin0.vendroid.ui.components.forms.Form
+import dev.nin0.vendroid.ui.components.forms.FormScaffold
+import dev.nin0.vendroid.ui.theme.VendroidTheme
 
 @Composable
 fun OptionsVDEScreen(

@@ -1,4 +1,4 @@
-package paige.vendroidnext.ui.components.forms
+package dev.nin0.vendroid.ui.components.forms
 
 import android.view.SoundEffectConstants
 import androidx.compose.foundation.layout.Arrangement

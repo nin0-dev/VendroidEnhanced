@@ -1,4 +1,4 @@
-package paige.vendroidnext.ui.components.forms
+package dev.nin0.vendroid.ui.components.forms
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

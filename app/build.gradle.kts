@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-	namespace = "paige.vendroidnext"
+	namespace = "dev.nin0"
 	compileSdk {
 		version = release(36)
 	}
 
 	defaultConfig {
-		applicationId = "paige.vendroidnext"
+		applicationId = "dev.nin0.vendroid"
 		minSdk = 24
 		targetSdk = 36
 		versionCode = 1

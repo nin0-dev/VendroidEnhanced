@@ -1,4 +1,4 @@
-package paige.vendroidnext.ui.components
+package dev.nin0.vendroid.ui.components
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -32,7 +32,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
-import paige.vendroidnext.ui.activities.OptionsActivity
+import dev.nin0.vendroid.ui.activities.OptionsActivity
 
 @SuppressLint("SetJavaScriptEnabled")
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)

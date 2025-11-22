@@ -1,4 +1,4 @@
-package paige.vendroidnext.ui.screens
+package dev.nin0.vendroid.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,7 +14,6 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -22,12 +21,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import paige.vendroidnext.ui.components.forms.Form
-import paige.vendroidnext.ui.components.forms.FormScaffold
-import paige.vendroidnext.ui.components.forms.Section
-import paige.vendroidnext.ui.components.forms.SectionRow
-import paige.vendroidnext.ui.components.forms.SectionRowLabel
-import paige.vendroidnext.ui.theme.VendroidTheme
+import dev.nin0.vendroid.ui.components.forms.Form
+import dev.nin0.vendroid.ui.components.forms.FormScaffold
+import dev.nin0.vendroid.ui.components.forms.Section
+import dev.nin0.vendroid.ui.components.forms.SectionRow
+import dev.nin0.vendroid.ui.components.forms.SectionRowLabel
+import dev.nin0.vendroid.ui.theme.VendroidTheme
 
 enum class VencordSource(val displayName: String, val description: String? = null) {
 	OFFICIAL("Official", "The official version of Vencord"),
