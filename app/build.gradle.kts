@@ -14,8 +14,8 @@ android {
 		applicationId = "dev.nin0.vendroid"
 		minSdk = 24
 		targetSdk = 36
-		versionCode = 1
-		versionName = "1.0"
+		versionCode = 14
+		versionName = "2.0"
 	}
 
 	buildTypes {
@@ -55,5 +55,6 @@ dependencies {
 	implementation(libs.androidx.compose.foundation.layout)
 	implementation(libs.androidx.navigation.compose)
 	implementation(libs.androidx.compose.animation)
+	implementation(libs.volley)
 	debugImplementation(libs.androidx.compose.ui.tooling)
 }
