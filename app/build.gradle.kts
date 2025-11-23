@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-	namespace = "dev.nin0"
+	namespace = "dev.nin0.vendroid"
 	compileSdk {
 		version = release(36)
 	}
