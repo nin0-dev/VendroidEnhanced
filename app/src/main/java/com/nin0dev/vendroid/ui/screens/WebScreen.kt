@@ -22,7 +22,7 @@ fun WebScreen() {
 			webViewState.value?.goBack()
 		else (context as? Activity)?.finish()
 	}
-	Webview(webViewState)
+	Webview(LocalContext.current, webViewState)
 
 	val dlg = remember { mutableStateOf(true) }
 	when {

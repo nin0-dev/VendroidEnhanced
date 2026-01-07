@@ -11,7 +11,7 @@ android {
 	}
 
 	defaultConfig {
-		applicationId = "dev.nin0.vendroid"
+		applicationId = "com.nin0dev.vendroid"
 		minSdk = 24
 		targetSdk = 36
 		versionCode = 14
