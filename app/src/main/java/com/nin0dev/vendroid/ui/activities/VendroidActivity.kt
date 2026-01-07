@@ -1,19 +1,18 @@
-package dev.nin0.vendroid.ui.activities
+package com.nin0dev.vendroid.ui.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import dev.nin0.vendroid.ui.screens.OptionsScreen
-import dev.nin0.vendroid.ui.theme.VendroidTheme
+import com.nin0dev.vendroid.ui.screens.WebScreen
+import com.nin0dev.vendroid.ui.theme.VendroidTheme
 
-class OptionsActivity : ComponentActivity() {
+class VendroidActivity : ComponentActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		enableEdgeToEdge()
 		setContent {
 			VendroidTheme {
-				OptionsScreen()
+				WebScreen()
 			}
 		}
 	}

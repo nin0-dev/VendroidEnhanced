@@ -1,4 +1,4 @@
-package dev.nin0.vendroid.ui.components
+package com.nin0dev.vendroid.ui.components
 
 import android.webkit.WebResourceRequest
 import android.webkit.WebView

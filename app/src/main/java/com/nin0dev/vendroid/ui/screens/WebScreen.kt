@@ -1,4 +1,4 @@
-package dev.nin0.vendroid.ui.screens
+package com.nin0dev.vendroid.ui.screens
 
 import android.app.Activity
 import android.webkit.WebView
@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
-import dev.nin0.vendroid.ui.components.Webview
+import com.nin0dev.vendroid.ui.components.Webview
 
 @Composable
 fun WebScreen() {

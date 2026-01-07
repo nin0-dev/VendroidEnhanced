@@ -1,4 +1,4 @@
-package dev.nin0.vendroid.ui.components
+package com.nin0dev.vendroid.ui.components
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -32,7 +32,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
-import dev.nin0.vendroid.ui.activities.OptionsActivity
+import com.nin0dev.vendroid.ui.activities.OptionsActivity
 
 @SuppressLint("SetJavaScriptEnabled")
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
@@ -59,7 +59,6 @@ fun Webview(
 			WebView(it).apply {
 				WebView.setWebContentsDebuggingEnabled(true)
 				webViewState.value = this
-				this.overScrollMode = WebView.OVER_SCROLL_ALWAYS
 				this.settings.javaScriptEnabled = true
 				this.settings.allowFileAccess = true
 				this.settings.builtInZoomControls = true

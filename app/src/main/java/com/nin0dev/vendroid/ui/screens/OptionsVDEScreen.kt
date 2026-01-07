@@ -1,10 +1,10 @@
-package dev.nin0.vendroid.ui.screens
+package com.nin0dev.vendroid.ui.screens
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import dev.nin0.vendroid.ui.components.forms.Form
-import dev.nin0.vendroid.ui.components.forms.FormScaffold
-import dev.nin0.vendroid.ui.theme.VendroidTheme
+import com.nin0dev.vendroid.ui.components.forms.Form
+import com.nin0dev.vendroid.ui.components.forms.FormScaffold
+import com.nin0dev.vendroid.ui.theme.VendroidTheme
 
 @Composable
 fun OptionsVDEScreen(

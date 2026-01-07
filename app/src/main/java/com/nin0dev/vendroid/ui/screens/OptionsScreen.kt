@@ -1,4 +1,4 @@
-package dev.nin0.vendroid.ui.screens
+package com.nin0dev.vendroid.ui.screens
 
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.EnterTransition
@@ -12,7 +12,7 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import dev.nin0.vendroid.ui.theme.VendroidTheme
+import com.nin0dev.vendroid.ui.theme.VendroidTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

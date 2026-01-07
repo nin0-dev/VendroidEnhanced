@@ -1,4 +1,4 @@
-package dev.nin0.vendroid.ui.screens
+package com.nin0dev.vendroid.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,12 +21,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import dev.nin0.vendroid.ui.components.forms.Form
-import dev.nin0.vendroid.ui.components.forms.FormScaffold
-import dev.nin0.vendroid.ui.components.forms.Section
-import dev.nin0.vendroid.ui.components.forms.SectionRow
-import dev.nin0.vendroid.ui.components.forms.SectionRowLabel
-import dev.nin0.vendroid.ui.theme.VendroidTheme
+import com.nin0dev.vendroid.ui.components.forms.Form
+import com.nin0dev.vendroid.ui.components.forms.FormScaffold
+import com.nin0dev.vendroid.ui.components.forms.Section
+import com.nin0dev.vendroid.ui.components.forms.SectionRow
+import com.nin0dev.vendroid.ui.components.forms.SectionRowLabel
+import com.nin0dev.vendroid.ui.theme.VendroidTheme
 
 enum class VencordSource(val displayName: String, val description: String? = null) {
 	OFFICIAL("Official", "The official version of Vencord"),

@@ -1,4 +1,4 @@
-package dev.nin0.vendroid.ui.screens
+package com.nin0dev.vendroid.ui.screens
 
 import android.content.Intent
 import androidx.activity.ComponentActivity
@@ -11,11 +11,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.net.toUri
-import dev.nin0.vendroid.ui.components.forms.Form
-import dev.nin0.vendroid.ui.components.forms.FormScaffold
-import dev.nin0.vendroid.ui.components.forms.Section
-import dev.nin0.vendroid.ui.components.forms.SectionRow
-import dev.nin0.vendroid.ui.components.forms.SectionRowLabel
+import com.nin0dev.vendroid.ui.components.forms.Form
+import com.nin0dev.vendroid.ui.components.forms.FormScaffold
+import com.nin0dev.vendroid.ui.components.forms.Section
+import com.nin0dev.vendroid.ui.components.forms.SectionRow
+import com.nin0dev.vendroid.ui.components.forms.SectionRowLabel
 
 @Composable
 fun OptionsHomeScreen(

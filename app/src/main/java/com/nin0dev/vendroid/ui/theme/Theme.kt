@@ -1,4 +1,4 @@
-package dev.nin0.vendroid.ui.theme
+package com.nin0dev.vendroid.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

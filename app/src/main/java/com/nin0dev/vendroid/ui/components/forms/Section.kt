@@ -1,4 +1,4 @@
-package dev.nin0.vendroid.ui.components.forms
+package com.nin0dev.vendroid.ui.components.forms
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
