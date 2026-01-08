@@ -46,20 +46,7 @@ fun OptionsModsScreen(
 
 	FormScaffold("Manage mods", onBackPressed) {
 		Form(it) {
-			Text(
-				"Manage and customize client mods. Multiple mods may be used at once. Not all mods will have the same level of support as Vencord and are being provided as-is",
-				style = MaterialTheme.typography.bodyMedium,
-				color = MaterialTheme.colorScheme.onSurfaceVariant,
-				modifier = Modifier.padding(20.dp)
-			)
 			Section("Vencord") {
-				SectionRow(horizontalArrangement = Arrangement.SpaceBetween) {
-					SectionRowLabel(title = "Use Vencord")
-					Switch(
-						checked = true,
-						onCheckedChange = {}
-					)
-				}
 				SectionRow(horizontalArrangement = Arrangement.SpaceBetween) {
 					Column(
 						modifier = Modifier.selectableGroup(),
@@ -107,15 +94,6 @@ fun OptionsModsScreen(
 							}
 						}
 					}
-				}
-			}
-			Section("Shelter") {
-				SectionRow(horizontalArrangement = Arrangement.SpaceBetween) {
-					SectionRowLabel(title = "Use Shelter")
-					Switch(
-						checked = false,
-						onCheckedChange = {}
-					)
 				}
 			}
 		}

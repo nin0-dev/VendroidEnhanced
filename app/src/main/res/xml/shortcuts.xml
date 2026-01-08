@@ -7,6 +7,6 @@
 		<intent
 			android:action="android.intent.action.VIEW"
 			android:targetClass="com.nin0dev.vendroid.ui.activities.OptionsActivity"
-			android:targetPackage="com.nin0dev" />
+			android:targetPackage="com.nin0dev.vendroid" />
 	</shortcut>
 </shortcuts>

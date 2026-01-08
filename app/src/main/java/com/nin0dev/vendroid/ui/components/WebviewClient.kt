@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import java.io.IOException
 import androidx.browser.customtabs.CustomTabsIntent
+import com.nin0dev.vendroid.R
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -19,7 +20,11 @@ class WebviewClient(
 ) : WebViewClient() {
 	override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
 		try {
+			val res = view?.context?.resources?.openRawResource(R.raw.vencord_mobile)
+			val contents = res?.bufferedReader().use { it?.readText() }
+
 			view?.evaluateJavascript(VencordManager.vencord, null)
+			contents.let { view?.evaluateJavascript(contents!!, null) }
 		}
 		catch (e: Exception) {
 			Toast.makeText(view?.context, "Couldn't load Vencord, try restarting the app.", Toast.LENGTH_LONG).show()
