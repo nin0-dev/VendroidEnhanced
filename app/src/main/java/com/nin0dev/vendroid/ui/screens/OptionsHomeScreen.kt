@@ -9,6 +9,7 @@ import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.SecurityUpdate
 import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material.icons.rounded.Star
+import androidx.compose.material.icons.rounded.SystemUpdateAlt
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -54,16 +55,30 @@ fun OptionsHomeScreen(
 						tint = Color(0xFFF3ADDF)
 					)
 				}
+			}
+			Section("Updates") {
 				SectionRow(
 					onClick = {
 						navigate("vde_autoupdate")
 					}
 				) {
 					SectionRowLabel(
-						title = "Updater",
-						subtitle = "Check updates and configure the VendroidEnhanced update/announcement checker",
+						title = "App Updater",
+						subtitle = "Check VendroidEnhanced updates and configure update/announcement checking",
 						icon = Icons.Rounded.SecurityUpdate,
 						tint = Color(0xFFC4FFAD)
+					)
+				}
+				SectionRow(
+					onClick = {
+						navigate("vencord_autoupdate")
+					}
+				) {
+					SectionRowLabel(
+						title = "Mod Updater",
+						subtitle = "Update your client mod of choice",
+						icon = Icons.Rounded.SystemUpdateAlt,
+						tint = Color(0xFFADFCFF)
 					)
 				}
 			}

@@ -23,30 +23,4 @@ fun WebScreen() {
 		else (context as? Activity)?.finish()
 	}
 	Webview(LocalContext.current, webViewState)
-
-	val dlg = remember { mutableStateOf(true) }
-	when {
-		dlg.value -> {
-			AlertDialog(
-				title = {
-					Text("Warning")
-				},
-				text = {
-					Text("This is a work in progress, many things are subject to change")
-				},
-				onDismissRequest = {
-					dlg.value = false
-				},
-				confirmButton = {
-					TextButton(
-						onClick = {
-							dlg.value = false
-						}
-					) {
-						Text("Ok")
-					}
-				},
-			)
-		}
-	}
 }
