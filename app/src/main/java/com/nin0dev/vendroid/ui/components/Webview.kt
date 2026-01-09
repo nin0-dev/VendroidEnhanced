@@ -35,6 +35,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.nin0dev.vendroid.ui.activities.OptionsActivity
+import com.nin0dev.vendroid.utils.VencordManager
 import java.util.logging.Logger
 
 @SuppressLint("SetJavaScriptEnabled")

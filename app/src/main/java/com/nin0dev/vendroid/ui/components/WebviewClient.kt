@@ -11,6 +11,7 @@ import androidx.annotation.RequiresApi
 import java.io.IOException
 import androidx.browser.customtabs.CustomTabsIntent
 import com.nin0dev.vendroid.R
+import com.nin0dev.vendroid.utils.VencordManager
 import java.net.HttpURLConnection
 import java.net.URL
 
