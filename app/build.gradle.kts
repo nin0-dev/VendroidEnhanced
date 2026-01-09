@@ -57,5 +57,6 @@ dependencies {
 	implementation(libs.androidx.navigation.compose)
 	implementation(libs.androidx.compose.animation)
 	implementation(libs.volley)
+	implementation("androidx.datastore:datastore-preferences:1.0.0")
 	debugImplementation(libs.androidx.compose.ui.tooling)
 }
