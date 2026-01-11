@@ -67,6 +67,20 @@ fun OptionsScreen() {
 		) {
 			OptionsVDEScreen(onBackPressed)
 		}
+		composable(
+			"vde_autoupdate",
+			enterTransition = enterTransition,
+			exitTransition = exitTransition
+		) {
+			OptionsAppUpdater(onBackPressed)
+		}
+		composable(
+			"vencord_autoupdate",
+			enterTransition = enterTransition,
+			exitTransition = exitTransition
+		) {
+			OptionsModUpdater(onBackPressed)
+		}
 	}
 }
 

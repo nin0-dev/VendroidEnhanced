@@ -13,6 +13,7 @@ import java.io.File
 
 object VencordManager {
 	var vencord = ""
+	var vencordVersion: String? = null
 
 	fun getVencordContents(context: Context, callback: () -> Unit) {
 		DS(context).getNRString("clientMod", "VENCORD") { mod ->
@@ -25,9 +26,7 @@ object VencordManager {
 					val queue = Volley.newRequestQueue(context)
 					val stringRequest = StringRequest(
 						Request.Method.GET,
-						if (mod == "VENCORD")
-							"https://github.com/VendroidEnhanced/plugin/releases/download/vencord-new/browser.js"
-						else "https://github.com/VendroidEnhanced/plugin/releases/download/equicord-new/browser.js",
+						BUNDLE_PER_CLIENT_MOD[mod],
 						{ response ->
 							vencord = response
 							file.writeText(response)
