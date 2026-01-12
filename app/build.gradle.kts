@@ -2,6 +2,7 @@ plugins {
 	alias(libs.plugins.android.application)
 	alias(libs.plugins.kotlin.android)
 	alias(libs.plugins.kotlin.compose)
+	kotlin("plugin.serialization") version "2.3.0"
 }
 
 android {
@@ -12,7 +13,7 @@ android {
 
 	defaultConfig {
 		applicationId = "com.nin0dev.vendroid"
-		minSdk = 24
+		minSdk = 29
 		targetSdk = 36
 		versionCode = 14
 		versionName = "2.0"
@@ -31,12 +32,15 @@ android {
 		sourceCompatibility = JavaVersion.VERSION_11
 		targetCompatibility = JavaVersion.VERSION_11
 	}
-	kotlinOptions {
-		jvmTarget = "11"
-	}
 	buildFeatures {
 		compose = true
 		buildConfig = true
+	}
+}
+
+kotlin {
+	compilerOptions {
+		jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
 	}
 }
 
@@ -57,6 +61,7 @@ dependencies {
 	implementation(libs.androidx.navigation.compose)
 	implementation(libs.androidx.compose.animation)
 	implementation(libs.volley)
-	implementation("androidx.datastore:datastore-preferences:1.0.0")
+	implementation(libs.androidx.datastore.preferences)
 	debugImplementation(libs.androidx.compose.ui.tooling)
+	implementation(libs.kotlinx.serialization.json)
 }
