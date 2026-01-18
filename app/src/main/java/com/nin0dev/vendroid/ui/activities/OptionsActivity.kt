@@ -9,6 +9,7 @@ import com.nin0dev.vendroid.ui.theme.VendroidTheme
 
 class OptionsActivity : ComponentActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
+		enableEdgeToEdge()
 		super.onCreate(savedInstanceState)
 		setContent {
 			VendroidTheme {

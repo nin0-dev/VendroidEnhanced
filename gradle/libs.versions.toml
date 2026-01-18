@@ -1,9 +1,10 @@
 [versions]
 agp = "8.13.2"
+backdrop = "v1.0.4"
 datastorePreferences = "1.2.0"
-kotlin = "2.0.21"
+kotlin = "2.3.0"
 coreKtx = "1.17.0"
-kotlinxSerializationJson = "1.9.0"
+kotlinxSerializationJson = "1.10.0-RC"
 lifecycleRuntimeKtx = "2.10.0"
 activityCompose = "1.12.0"
 composeBom = "2025.11.01"
@@ -34,6 +35,7 @@ androidx-compose-material-icons-extended = { group = "androidx.compose.material"
 androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout", version.ref = "foundationLayout" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 androidx-compose-animation = { group = "androidx.compose.animation", name = "animation", version.ref = "animation" }
+backdrop = { module = "io.github.kyant0:backdrop", version.ref = "backdrop" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 volley = { module = "com.android.volley:volley", version.ref = "volley" }
 

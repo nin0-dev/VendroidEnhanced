@@ -8,3 +8,4 @@ val REPO_PER_CLIENT_MOD = mapOf(
 	"VENCORD" to "Vendicated/Vencord",
 	"EQUICORD" to "Equicord/Equicord"
 )
+const val UPDATE_API = "https://vendroid.nin0.dev"

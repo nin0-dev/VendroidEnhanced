@@ -30,7 +30,7 @@ object VencordManager {
 						{ response ->
 							vencord = response
 							file.writeText(response)
-							DS(context).setInt(CoroutineScope(Dispatchers.IO), "lastMajorVerUpdateWithVencord", BuildConfig.VERSION_CODE)
+							DS(context).setInt("lastMajorVerUpdateWithVencord", BuildConfig.VERSION_CODE)
 							callback()
 						},
 						{ error ->

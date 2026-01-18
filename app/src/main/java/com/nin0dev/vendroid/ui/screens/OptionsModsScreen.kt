@@ -14,9 +14,6 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,9 +21,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.datastore.preferences.core.booleanPreferencesKey
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.stringPreferencesKey
 import com.nin0dev.vendroid.ui.components.forms.Form
 import com.nin0dev.vendroid.ui.components.forms.FormScaffold
 import com.nin0dev.vendroid.ui.components.forms.Section
@@ -34,8 +28,6 @@ import com.nin0dev.vendroid.ui.components.forms.SectionRow
 import com.nin0dev.vendroid.ui.components.forms.SectionRowLabel
 import com.nin0dev.vendroid.ui.theme.VendroidTheme
 import com.nin0dev.vendroid.utils.DS
-import com.nin0dev.vendroid.utils.DataStore
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 enum class VencordSource(val displayName: String, val description: String? = null) {
@@ -72,7 +64,7 @@ fun OptionsModsScreen(
 									.selectable(
 										selected = source.name == clientMod.value,
 										onClick = { scope.launch {
-											ds.setString(scope, "clientMod", source.name)
+											ds.setString("clientMod", source.name)
 										} },
 										role = Role.RadioButton
 									),
@@ -113,14 +105,17 @@ fun OptionsModsScreen(
 			}
 
 			Section(title = "Developer only") {
-				SectionRow(horizontalArrangement = Arrangement.SpaceBetween) {
+				SectionRow(
+					horizontalArrangement = Arrangement.SpaceBetween,
+					onClick = {
+						ds.setBool("canUseDevbuild", !canUseDevbuild.value)
+						if (clientMod.value == "CUSTOM") ds.setString("clientMod", "VENCORD")
+					}
+				) {
 					SectionRowLabel(title = "Use a custom Vencord location")
 					Switch(
 						checked = canUseDevbuild.value,
-						onCheckedChange = {
-							ds.setBool(scope, "canUseDevbuild", it)
-							if (clientMod.value == "CUSTOM") ds.setString(scope, "clientMod", "VENCORD")
-						}
+						onCheckedChange = null
 					)
 				}
 			}

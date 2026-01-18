@@ -14,7 +14,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 
 val Context.DataStore by preferencesDataStore("settings")
@@ -84,20 +83,20 @@ class DS(private val context: Context) {
 		}
 	}
 
-	fun setString(scope: CoroutineScope, key: String, value: String) {
-		scope.launch {
+	fun setString(key: String, value: String) {
+		CoroutineScope(Dispatchers.IO).launch {
 			context.DataStore.edit { it[stringPreferencesKey(key)] = value }
 		}
 	}
 
-	fun setBool(scope: CoroutineScope, key: String, value: Boolean) {
-		scope.launch {
+	fun setBool(key: String, value: Boolean) {
+		CoroutineScope(Dispatchers.IO).launch {
 			context.DataStore.edit { it[booleanPreferencesKey(key)] = value }
 		}
 	}
 
-	fun setInt(scope: CoroutineScope, key: String, value: Int) {
-		scope.launch {
+	fun setInt(key: String, value: Int) {
+		CoroutineScope(Dispatchers.IO).launch {
 			context.DataStore.edit { it[intPreferencesKey(key)] = value }
 		}
 	}
