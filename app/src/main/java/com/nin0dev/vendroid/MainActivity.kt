@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
@@ -19,6 +20,7 @@ import android.webkit.WebChromeClient
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
@@ -34,6 +36,8 @@ import com.nin0dev.vendroid.webview.VWebviewClient
 import com.nin0dev.vendroid.webview.VencordNative
 import pl.droidsonroids.gif.GifImageView
 import java.io.IOException
+import java.time.LocalDate
+import androidx.core.content.edit
 
 
 class MainActivity : Activity() {
@@ -94,8 +98,12 @@ class MainActivity : Activity() {
             ) || ignoreSetting
         ) {
             val queue = Volley.newRequestQueue(this)
+            val i = "${LocalDate.now().dayOfYear}${LocalDate.now().year}"
             val url =
-                "https://vendroid.nin0.dev/api/updates?version=${BuildConfig.VERSION_CODE}"
+                "https://vendroid.nin0.dev/api/updates?version=${BuildConfig.VERSION_CODE}${if(sPrefs.getString("lastDailyCheck", "") == i) "" else "&daily=true"}"
+            sPrefs.edit {
+                putString("lastDailyCheck", i)
+            }
             val stringRequest = StringRequest(
                 Request.Method.GET, url,
                 { response ->
