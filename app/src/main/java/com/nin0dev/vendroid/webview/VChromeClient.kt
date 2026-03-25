@@ -26,16 +26,23 @@ class VChromeClient(private val activity: MainActivity) : WebChromeClient() {
         return true
     }
 
-    override fun onShowFileChooser(webView: WebView, filePathCallback: ValueCallback<Array<Uri>>, fileChooserParams: FileChooserParams): Boolean {
-        if (activity.filePathCallback != null) activity.filePathCallback?.onReceiveValue(null)
-        activity.filePathCallback = filePathCallback as ValueCallback<Array<Uri?>?>
-        val i = fileChooserParams.createIntent()
-        try {
-            activity.startActivityForResult(i, MainActivity.FILECHOOSER_RESULTCODE)
-        } catch (ex: ActivityNotFoundException) {
+    override fun onShowFileChooser(
+        webView: WebView,
+        filePathCallback: ValueCallback<Array<Uri>>,
+        fileChooserParams: FileChooserParams
+    ): Boolean {
+        activity.filePathCallback?.onReceiveValue(null)
+        activity.filePathCallback = null
+
+        activity.filePathCallback = filePathCallback
+
+        return try {
+            val intent = fileChooserParams.createIntent()
+            activity.startActivityForResult(intent, MainActivity.FILECHOOSER_RESULTCODE)
+            true
+        } catch (e: ActivityNotFoundException) {
             activity.filePathCallback = null
-            return false
+            false
         }
-        return true
     }
 }
