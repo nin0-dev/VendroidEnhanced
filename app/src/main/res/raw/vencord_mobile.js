@@ -41,7 +41,7 @@
                 Object.assign(document.createElement("link"), {
                 rel: "stylesheet",
                 type: "text/css",
-                href: "https://github.com/Vendicated/Vencord/releases/download/devbuild/browser.css"
+                href: Vencord.Api.isEquicord ? "https://github.com/VendroidEnhanced/plugin/releases/download/equicord/browser.css" : "https://github.com/Vendicated/Vencord/releases/download/devbuild/browser.css"
             }));
             document.documentElement.appendChild(
                 Object.assign(document.createElement("link"), {
