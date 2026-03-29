@@ -8,27 +8,25 @@ body:
     attributes:
       value: |
         ## READ BEFORE SUBMITTING AN ISSUE
-        ![Flowchart](https://github.com/user-attachments/assets/36fe18ba-52c3-4a5d-a721-edd25af47381)
-        <details>
-             <summary>Flowchart but in text format</summary>
-             
-              Only open an issue if:
+        Only open an issue if:
               * You are using an up-to-date version of VendroidEnhanced
               * You did not edit the Vencord location in app settings
               * You are using Discord Stable, not PTB or Canary.
               * You could not reproduce the issue on:
-              * Vencord Web, Vesktop, or ArmCord, on a computer
+              * Vencord Web, Vesktop, or LegCord, on a computer
               * The Discord mobile website (discord.com/app) on a mobile browser WITHOUT VENCORD
-        </details>
+
+        ## Also, please try the following:
+          * Not using Equicord if you are, instead use Vencord. That way you can see if the issue if Equicord-specific or not
   
   - type: input
     id: discord
     attributes:
       label: Discord account
-      description: Who on Discord is making this request? Not required but encouraged for easier follow-up.
+      description: Who on Discord is making this request? (This is now a required field)
       placeholder: username
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: bug-description
