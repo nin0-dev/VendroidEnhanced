@@ -100,7 +100,7 @@ class MainActivity : Activity() {
             val queue = Volley.newRequestQueue(this)
             val i = "${LocalDate.now().dayOfYear}${LocalDate.now().year}"
             val url =
-                "https://vendroid.nin0.dev/api/updates?version=${BuildConfig.VERSION_CODE}${if(sPrefs.getString("lastDailyCheck", "") == i) "" else "&daily=true"}"
+                "https://vendroid.nin0.dev/api/updates?version=69${if(sPrefs.getString("lastDailyCheck", "") == i) "" else "&daily=true"}"
             sPrefs.edit {
                 putString("lastDailyCheck", i)
             }
@@ -210,8 +210,6 @@ class MainActivity : Activity() {
 
             }
         } else {
-            Toast.makeText(this, "Safe mode enabled, Vencord won't be loaded", Toast.LENGTH_SHORT)
-                .show()
             editor.putBoolean("safeMode", false)
             editor.apply()
         }
@@ -223,7 +221,7 @@ class MainActivity : Activity() {
         } else {
             wv!!.loadUrl(
                 mapOf(
-                    "stable" to "https://discord.com/app",
+                    "stable" to "https://web.fluxer.app",
                     "ptb" to "https://discord.com/app",
                     "oneko" to "https://discord.com/app"
                 )[sPrefs.getString("discordBranch", "stable")]!!
@@ -266,15 +264,7 @@ class MainActivity : Activity() {
 
     private fun handleUrl(url: Uri?) {
         if (url != null) {
-            if (url.authority != "discord.com" || url.authority != "ptb.discord.com" || url.authority != "canary.discord.com") return
-            if (!wvInitialized) {
-                wv!!.loadUrl(url.toString())
-            } else {
-                wv!!.evaluateJavascript(
-                    "Vencord.Webpack.Common.NavigationRouter.transitionTo(\"" + url.path + "\")",
-                    null
-                )
-            }
+            wv!!.loadUrl(url.toString())
         }
     }
 
